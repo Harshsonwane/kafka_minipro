@@ -1,0 +1,11 @@
+//to make this project first you need zookeeper for that 
+--> docker run -p 2181:2181 zookeeper
+alwys open this //zookeeper 
+kafka runs on 9092
+
+// now apache 
+
+//write all in one line
+docker run -p 9092:9092 -e KAFKA_ZOOKEEPER_CONNECT=192.168.1.10:2181 
+-e KAFKA_ADVERTISED_LISTENERS=PALINTEXT://192.168.1.10:9092 
+-e KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1 confluentinc/cp-kafka
